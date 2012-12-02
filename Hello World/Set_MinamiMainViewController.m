@@ -14,6 +14,13 @@
 
 @implementation Set_MinamiMainViewController
 
+- (void) loadView
+{
+    UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    textView.text = @"Hello World";
+    textView.textAlignment = UITextAlignmentCenter;
+    self.view = textView;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -66,4 +73,9 @@
     }
 }
 
+- (void) dealloc
+{
+    //[textView release]
+    //[super dealloc];
+}
 @end
