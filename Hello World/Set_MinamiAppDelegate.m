@@ -7,12 +7,20 @@
 //
 
 #import "Set_MinamiAppDelegate.h"
+#import "Set_MinamiMainViewController.h"
 
 @implementation Set_MinamiAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    _window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    Set_MinamiMainViewController* viewController= [[Set_MinamiMainViewController alloc]init];
+    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];  // -- (1)
+    
+    [_window addSubview:navigationController.view];  // -- (2)
+    [_window makeKeyAndVisible];
     return YES;
 }
 							
