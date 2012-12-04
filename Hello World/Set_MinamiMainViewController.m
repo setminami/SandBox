@@ -16,10 +16,12 @@
 
 - (void) loadView
 {
-    UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
-    textView.text = @"Hello World";
-    textView.textAlignment = UITextAlignmentCenter;
-    self.view = textView;
+    UITableView* UTV = [[UITableView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    self.tableView = UTV;
+   // UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    //textView.text = @"Hello World";
+    //textView.textAlignment = UITextAlignmentCenter;
+    //self.view = UTV;
 }
 - (void)viewDidLoad
 {
