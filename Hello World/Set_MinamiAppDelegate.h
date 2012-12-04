@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class RootViewController;
 @interface Set_MinamiAppDelegate : UIResponder <UIApplicationDelegate>{
-    UIWindow *window;
-    RootViewController *viewController;
 }
 
 @property (strong, nonatomic) UIWindow *window;
