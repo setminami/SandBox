@@ -17,6 +17,8 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
+    _Volume = -0.2f;
+    _Interval = 0.3;
     [self start];
 }
 
@@ -52,10 +54,10 @@ static void AudioInputCallback(
     UInt32 enabledLevelMeter = true;
     AudioQueueSetProperty(queue,kAudioQueueProperty_EnableLevelMetering,&enabledLevelMeter,sizeof(UInt32));
     
-    [NSTimer scheduledTimerWithTimeInterval:0.2
-                                     target:self
-                                   selector:@selector(updateVolume:)
-                                   userInfo:nil
+    [NSTimer scheduledTimerWithTimeInterval:_Interval
+                                    target:self
+                                    selector:@selector(updateVolume:)
+                                    userInfo:nil
                                     repeats:YES];
 }
 
@@ -67,13 +69,14 @@ static void AudioInputCallback(
     NSLog(@"mPeakPower=%0.9f", levelMeter.mPeakPower);
     NSLog(@"mAveragePower=%0.9f", levelMeter.mAveragePower);
     
-    if (levelMeter.mPeakPower >= -1.0f) {
+    if (levelMeter.mPeakPower >= _Volume) {
         [self fire];
     }
 }
 
 - (void)fire {
     NSLog(@"Recording!");
+
 }
 
 

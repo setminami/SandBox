@@ -13,4 +13,7 @@
      AudioQueueRef queue;  
 }
 
+@property float Volume;
+@property float Interval;
+
 @end
