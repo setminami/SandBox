@@ -9,6 +9,7 @@
 #import "Set_MinamiAppDelegate.h"
 #import "Set_MinamiMainViewController.h"
 
+
 @implementation Set_MinamiAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,6 +22,10 @@
     
     [_window addSubview:navigationController.view];  // -- (2)
     [_window makeKeyAndVisible];
+    _SPVC = [[SoundPickerViewController alloc]init];
+    [_SPVC awakeFromNib];
+    NSLog(@"Start!");
+    
     return YES;
 }
 							

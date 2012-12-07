@@ -25,6 +25,8 @@
 		DE417A1E166B8EF30048FD78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4179F3166B8EF30048FD78 /* Foundation.framework */; };
 		DE417A26166B8EF30048FD78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE417A24166B8EF30048FD78 /* InfoPlist.strings */; };
 		DE417A29166B8EF30048FD78 /* Hello_WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE417A28166B8EF30048FD78 /* Hello_WorldTests.m */; };
+		DEE3B9E5167202560023B80C /* SoundPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE3B9E4167202560023B80C /* SoundPickerViewController.m */; };
+		DEE3B9E8167207100023B80C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE3B9E7167207100023B80C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		DE417A25166B8EF30048FD78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE417A27166B8EF30048FD78 /* Hello_WorldTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hello_WorldTests.h; sourceTree = "<group>"; };
 		DE417A28166B8EF30048FD78 /* Hello_WorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hello_WorldTests.m; sourceTree = "<group>"; };
+		DEE3B9E3167202560023B80C /* SoundPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPickerViewController.h; sourceTree = "<group>"; };
+		DEE3B9E4167202560023B80C /* SoundPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPickerViewController.m; sourceTree = "<group>"; };
+		DEE3B9E7167207100023B80C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE3B9E8167207100023B80C /* AudioToolbox.framework in Frameworks */,
 				DE4179F2166B8EF30048FD78 /* UIKit.framework in Frameworks */,
 				DE4179F4166B8EF30048FD78 /* Foundation.framework in Frameworks */,
 				DE4179F6166B8EF30048FD78 /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +117,7 @@
 		DE4179F0166B8EF30048FD78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEE3B9E7167207100023B80C /* AudioToolbox.framework */,
 				DE4179F1166B8EF30048FD78 /* UIKit.framework */,
 				DE4179F3166B8EF30048FD78 /* Foundation.framework */,
 				DE4179F5166B8EF30048FD78 /* CoreGraphics.framework */,
@@ -127,6 +134,8 @@
 				DE417A09166B8EF30048FD78 /* MainStoryboard_iPhone.storyboard */,
 				DE417A0C166B8EF30048FD78 /* MainStoryboard_iPad.storyboard */,
 				DE417A0F166B8EF30048FD78 /* Set_MinamiMainViewController.h */,
+				DEE3B9E3167202560023B80C /* SoundPickerViewController.h */,
+				DEE3B9E4167202560023B80C /* SoundPickerViewController.m */,
 				DE417A10166B8EF30048FD78 /* Set_MinamiMainViewController.m */,
 				DE417A12166B8EF30048FD78 /* Set_MinamiFlipsideViewController.h */,
 				DE417A13166B8EF30048FD78 /* Set_MinamiFlipsideViewController.m */,
@@ -284,6 +293,7 @@
 				DE417A02166B8EF30048FD78 /* Set_MinamiAppDelegate.m in Sources */,
 				DE417A11166B8EF30048FD78 /* Set_MinamiMainViewController.m in Sources */,
 				DE417A14166B8EF30048FD78 /* Set_MinamiFlipsideViewController.m in Sources */,
+				DEE3B9E5167202560023B80C /* SoundPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +478,7 @@
 				DE417A2E166B8EF40048FD78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE417A2F166B8EF40048FD78 /* Build configuration list for PBXNativeTarget "Hello WorldTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +487,7 @@
 				DE417A31166B8EF40048FD78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,6 +15,16 @@
 
 @implementation SoundPickerViewController
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    [self start];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    //[self start];
+}
+
 static void AudioInputCallback(
                                void* inUserData,
                                AudioQueueRef inAQ,
@@ -66,20 +76,7 @@ static void AudioInputCallback(
     NSLog(@"Recording!");
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
 
 - (void)didReceiveMemoryWarning
 {
