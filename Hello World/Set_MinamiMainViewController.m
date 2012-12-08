@@ -16,13 +16,19 @@
 
 - (void) loadView
 {
-    UITableView* UTV = [[UITableView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
-    self.tableView = UTV;
-   // UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    //
+    //UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
     //textView.text = @"Hello World";
-    //textView.textAlignment = UITextAlignmentCenter;
-    //self.view = UTV;
+    //self.view = textView;
 }
+
+-(void) reloadViews{
+    UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    textView.text = @"Recording!!";
+    self.view = textView;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

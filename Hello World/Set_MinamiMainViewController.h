@@ -8,7 +8,7 @@
 
 #import "Set_MinamiFlipsideViewController.h"
 
-@interface Set_MinamiMainViewController : UITableViewController <Set_MinamiFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface Set_MinamiMainViewController : UIViewController <Set_MinamiFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 

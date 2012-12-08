@@ -75,6 +75,12 @@ static void AudioInputCallback(
 }
 
 - (void)fire {
+    Set_MinamiMainViewController* SMMVC = [[Set_MinamiMainViewController alloc]init];
+    
+    UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    textView.text = @"Recording!";
+    SMMVC.view = textView;
+    [SMMVC reloadInputViews];
     NSLog(@"Recording!");
 
 }
