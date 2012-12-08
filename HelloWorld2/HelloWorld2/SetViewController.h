@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SoundPickerViewController.h"
 
 @interface SetViewController : UIViewController
 

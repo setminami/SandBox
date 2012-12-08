@@ -17,6 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    SoundPickerViewController* SPVC = [[SoundPickerViewController alloc]init];
+    [SPVC awakeFromNib];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
