@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import "SetViewController.h"
+#import "Set_ViewController.h"
 
 @interface SoundPickerViewController : UIViewController{
      AudioQueueRef queue;  
