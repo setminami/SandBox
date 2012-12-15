@@ -11,7 +11,7 @@
 #import "Set_ViewController.h"
 #import "Set_SensorPickersProtocol.h"
 
-@interface SoundPickerViewController : NSOperation<Set_SensorPickersProtocol> {
+@interface SoundPicker : NSOperation<Set_SensorPickersProtocol> {
      AudioQueueRef queue;
 }
 
