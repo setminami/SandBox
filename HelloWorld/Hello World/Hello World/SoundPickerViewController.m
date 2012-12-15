@@ -75,13 +75,12 @@ static void AudioInputCallback(
 }
 
 - (void)fire {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"I can hear you..."
-                                                    message:@"Recording!!"
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:nil];
-    [alert show];
-    [alert dismissWithClickedButtonIndex:0 animated:YES];
+    Set_MinamiMainViewController* SMMVC = [[Set_MinamiMainViewController alloc]init];
+    
+    UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    textView.text = @"Recording!";
+    SMMVC.view = textView;
+    [SMMVC reloadInputViews];
     NSLog(@"Recording!");
 
 }

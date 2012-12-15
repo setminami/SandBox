@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DEBEBF69167C8392009AF0DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF68167C8392009AF0DA /* UIKit.framework */; };
+		DEBEBF6B167C8392009AF0DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF6A167C8392009AF0DA /* Foundation.framework */; };
+		DEBEBF6D167C8392009AF0DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF6C167C8392009AF0DA /* CoreGraphics.framework */; };
+		DEBEBF73167C8392009AF0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEBEBF71167C8392009AF0DA /* InfoPlist.strings */; };
+		DEBEBF75167C8392009AF0DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBEBF74167C8392009AF0DA /* main.m */; };
+		DEBEBF79167C8393009AF0DA /* Set_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBEBF78167C8393009AF0DA /* Set_AppDelegate.m */; };
+		DEBEBF7B167C8393009AF0DA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DEBEBF7A167C8393009AF0DA /* Default.png */; };
+		DEBEBF7D167C8393009AF0DA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEBEBF7C167C8393009AF0DA /* Default@2x.png */; };
+		DEBEBF7F167C8393009AF0DA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEBEBF7E167C8393009AF0DA /* Default-568h@2x.png */; };
+		DEBEBF82167C8393009AF0DA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBEBF80167C8393009AF0DA /* MainStoryboard_iPhone.storyboard */; };
+		DEBEBF85167C8393009AF0DA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBEBF83167C8393009AF0DA /* MainStoryboard_iPad.storyboard */; };
+		DEBEBF88167C8393009AF0DA /* Set_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBEBF87167C8393009AF0DA /* Set_ViewController.m */; };
+		DEBEBF92167C85A9009AF0DA /* AccelSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBEBF91167C85A9009AF0DA /* AccelSensor.m */; };
+		DEBEBF95167C86FB009AF0DA /* SoundPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBEBF94167C86FB009AF0DA /* SoundPicker.m */; };
+		DEBEBF97167C892F009AF0DA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF96167C892F009AF0DA /* AudioToolbox.framework */; };
+		DEBEBF99167C894A009AF0DA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF98167C894A009AF0DA /* CoreMotion.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DEBEBF64167C8392009AF0DA /* SensorThreadManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorThreadManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEBEBF68167C8392009AF0DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DEBEBF6A167C8392009AF0DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DEBEBF6C167C8392009AF0DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DEBEBF70167C8392009AF0DA /* SensorThreadManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SensorThreadManager-Info.plist"; sourceTree = "<group>"; };
+		DEBEBF72167C8392009AF0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEBEBF74167C8392009AF0DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEBEBF76167C8392009AF0DA /* SensorThreadManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SensorThreadManager-Prefix.pch"; sourceTree = "<group>"; };
+		DEBEBF77167C8393009AF0DA /* Set_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Set_AppDelegate.h; sourceTree = "<group>"; };
+		DEBEBF78167C8393009AF0DA /* Set_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Set_AppDelegate.m; sourceTree = "<group>"; };
+		DEBEBF7A167C8393009AF0DA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DEBEBF7C167C8393009AF0DA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DEBEBF7E167C8393009AF0DA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DEBEBF81167C8393009AF0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		DEBEBF84167C8393009AF0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		DEBEBF86167C8393009AF0DA /* Set_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Set_ViewController.h; sourceTree = "<group>"; };
+		DEBEBF87167C8393009AF0DA /* Set_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Set_ViewController.m; sourceTree = "<group>"; };
+		DEBEBF8F167C84A3009AF0DA /* Set_SensorPickersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set_SensorPickersProtocol.h; sourceTree = "<group>"; };
+		DEBEBF90167C85A9009AF0DA /* AccelSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelSensor.h; sourceTree = "<group>"; };
+		DEBEBF91167C85A9009AF0DA /* AccelSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelSensor.m; sourceTree = "<group>"; };
+		DEBEBF93167C86FB009AF0DA /* SoundPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPicker.h; sourceTree = "<group>"; };
+		DEBEBF94167C86FB009AF0DA /* SoundPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPicker.m; sourceTree = "<group>"; };
+		DEBEBF96167C892F009AF0DA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DEBEBF98167C894A009AF0DA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEBEBF61167C8392009AF0DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEBEBF99167C894A009AF0DA /* CoreMotion.framework in Frameworks */,
+				DEBEBF97167C892F009AF0DA /* AudioToolbox.framework in Frameworks */,
+				DEBEBF69167C8392009AF0DA /* UIKit.framework in Frameworks */,
+				DEBEBF6B167C8392009AF0DA /* Foundation.framework in Frameworks */,
+				DEBEBF6D167C8392009AF0DA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DEBEBF59167C8392009AF0DA = {
+			isa = PBXGroup;
+			children = (
+				DEBEBF6E167C8392009AF0DA /* SensorThreadManager */,
+				DEBEBF67167C8392009AF0DA /* Frameworks */,
+				DEBEBF65167C8392009AF0DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DEBEBF65167C8392009AF0DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEBF64167C8392009AF0DA /* SensorThreadManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEBEBF67167C8392009AF0DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEBF98167C894A009AF0DA /* CoreMotion.framework */,
+				DEBEBF96167C892F009AF0DA /* AudioToolbox.framework */,
+				DEBEBF68167C8392009AF0DA /* UIKit.framework */,
+				DEBEBF6A167C8392009AF0DA /* Foundation.framework */,
+				DEBEBF6C167C8392009AF0DA /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEBEBF6E167C8392009AF0DA /* SensorThreadManager */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEBF93167C86FB009AF0DA /* SoundPicker.h */,
+				DEBEBF94167C86FB009AF0DA /* SoundPicker.m */,
+				DEBEBF90167C85A9009AF0DA /* AccelSensor.h */,
+				DEBEBF91167C85A9009AF0DA /* AccelSensor.m */,
+				DEBEBF77167C8393009AF0DA /* Set_AppDelegate.h */,
+				DEBEBF78167C8393009AF0DA /* Set_AppDelegate.m */,
+				DEBEBF80167C8393009AF0DA /* MainStoryboard_iPhone.storyboard */,
+				DEBEBF83167C8393009AF0DA /* MainStoryboard_iPad.storyboard */,
+				DEBEBF86167C8393009AF0DA /* Set_ViewController.h */,
+				DEBEBF87167C8393009AF0DA /* Set_ViewController.m */,
+				DEBEBF6F167C8392009AF0DA /* Supporting Files */,
+			);
+			path = SensorThreadManager;
+			sourceTree = "<group>";
+		};
+		DEBEBF6F167C8392009AF0DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEBF8E167C8457009AF0DA /* PROTOCOLS */,
+				DEBEBF70167C8392009AF0DA /* SensorThreadManager-Info.plist */,
+				DEBEBF71167C8392009AF0DA /* InfoPlist.strings */,
+				DEBEBF74167C8392009AF0DA /* main.m */,
+				DEBEBF76167C8392009AF0DA /* SensorThreadManager-Prefix.pch */,
+				DEBEBF7A167C8393009AF0DA /* Default.png */,
+				DEBEBF7C167C8393009AF0DA /* Default@2x.png */,
+				DEBEBF7E167C8393009AF0DA /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEBEBF8E167C8457009AF0DA /* PROTOCOLS */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEBF8F167C84A3009AF0DA /* Set_SensorPickersProtocol.h */,
+			);
+			name = PROTOCOLS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEBEBF63167C8392009AF0DA /* SensorThreadManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEBEBF8B167C8393009AF0DA /* Build configuration list for PBXNativeTarget "SensorThreadManager" */;
+			buildPhases = (
+				DEBEBF60167C8392009AF0DA /* Sources */,
+				DEBEBF61167C8392009AF0DA /* Frameworks */,
+				DEBEBF62167C8392009AF0DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SensorThreadManager;
+			productName = SensorThreadManager;
+			productReference = DEBEBF64167C8392009AF0DA /* SensorThreadManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEBEBF5B167C8392009AF0DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Set_;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Set Minami";
+			};
+			buildConfigurationList = DEBEBF5E167C8392009AF0DA /* Build configuration list for PBXProject "SensorThreadManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DEBEBF59167C8392009AF0DA;
+			productRefGroup = DEBEBF65167C8392009AF0DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEBEBF63167C8392009AF0DA /* SensorThreadManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEBEBF62167C8392009AF0DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEBEBF73167C8392009AF0DA /* InfoPlist.strings in Resources */,
+				DEBEBF7B167C8393009AF0DA /* Default.png in Resources */,
+				DEBEBF7D167C8393009AF0DA /* Default@2x.png in Resources */,
+				DEBEBF7F167C8393009AF0DA /* Default-568h@2x.png in Resources */,
+				DEBEBF82167C8393009AF0DA /* MainStoryboard_iPhone.storyboard in Resources */,
+				DEBEBF85167C8393009AF0DA /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEBEBF60167C8392009AF0DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEBEBF75167C8392009AF0DA /* main.m in Sources */,
+				DEBEBF79167C8393009AF0DA /* Set_AppDelegate.m in Sources */,
+				DEBEBF88167C8393009AF0DA /* Set_ViewController.m in Sources */,
+				DEBEBF92167C85A9009AF0DA /* AccelSensor.m in Sources */,
+				DEBEBF95167C86FB009AF0DA /* SoundPicker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DEBEBF71167C8392009AF0DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEBEBF72167C8392009AF0DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DEBEBF80167C8393009AF0DA /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEBEBF81167C8393009AF0DA /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		DEBEBF83167C8393009AF0DA /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEBEBF84167C8393009AF0DA /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEBEBF89167C8393009AF0DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEBEBF8A167C8393009AF0DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEBEBF8C167C8393009AF0DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SensorThreadManager/SensorThreadManager-Prefix.pch";
+				INFOPLIST_FILE = "SensorThreadManager/SensorThreadManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DEBEBF8D167C8393009AF0DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SensorThreadManager/SensorThreadManager-Prefix.pch";
+				INFOPLIST_FILE = "SensorThreadManager/SensorThreadManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEBEBF5E167C8392009AF0DA /* Build configuration list for PBXProject "SensorThreadManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEBEBF89167C8393009AF0DA /* Debug */,
+				DEBEBF8A167C8393009AF0DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEBEBF8B167C8393009AF0DA /* Build configuration list for PBXNativeTarget "SensorThreadManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEBEBF8C167C8393009AF0DA /* Debug */,
+				DEBEBF8D167C8393009AF0DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEBEBF5B167C8392009AF0DA /* Project object */;
+}

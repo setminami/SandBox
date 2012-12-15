@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SoundPickerViewController.h"
 
-@interface Set_MinamiAppDelegate : UIResponder <UIApplicationDelegate>
+@interface Set_MinamiAppDelegate : UIResponder <UIApplicationDelegate>{
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) SoundPickerViewController* SPVC;
 
 @end

@@ -9,12 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "Set_ViewController.h"
+#import "Set_SensorPickersProtocol.h"
 
-@interface SoundPickerViewController : UIViewController{
-     AudioQueueRef queue;  
+@interface SoundPicker : NSObject<Set_SensorPickersProtocol> {
+     AudioQueueRef queue;
 }
 
 @property float Volume;
 @property float Interval;
+
+-(BOOL) canBeThread;
+-(void) start;
+-(void) main;
+-(void) stop;
 
 @end

@@ -7,12 +7,31 @@
 //
 
 #import "Set_MinamiAppDelegate.h"
+#import "Set_MinamiMainViewController.h"
+
 
 @implementation Set_MinamiAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    _window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    Set_MinamiMainViewController* viewController= [[Set_MinamiMainViewController alloc]init];
+    UINavigationController* navigationController = [[UINavigationController alloc]init];  // -- (1)
+    
+    [_window addSubview:navigationController.view];  // -- (2)
+    [_window makeKeyAndVisible];
+    
+    UITextField* textField = [[UITextField alloc]init];
+    [textField awakeFromNib];
+    UITextView* textView = [[UITextView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame]];
+    textView.text = @"Hello World";
+    viewController.view = textView;
+    _SPVC = [[SoundPickerViewController alloc]init];
+    [_SPVC awakeFromNib];
+    NSLog(@"Start!");
+    
     return YES;
 }
 							
