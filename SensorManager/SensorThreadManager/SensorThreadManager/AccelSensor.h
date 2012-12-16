@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Set_SensorPickersProtocol.h"
+#import "AbstractSensors.h"
 
 
-@interface AccelSensor : NSObject<Set_SensorPickersProtocol>{
+@interface AccelSensor : AbstractSensors{
     
 }
 

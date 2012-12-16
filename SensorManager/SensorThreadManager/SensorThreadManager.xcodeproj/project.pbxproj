@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE9A5474167DA6F300EF5CCA /* AbstractSensors.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9A5473167DA6F300EF5CCA /* AbstractSensors.m */; };
 		DEBEBF69167C8392009AF0DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF68167C8392009AF0DA /* UIKit.framework */; };
 		DEBEBF6B167C8392009AF0DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF6A167C8392009AF0DA /* Foundation.framework */; };
 		DEBEBF6D167C8392009AF0DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBEBF6C167C8392009AF0DA /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE9A5472167DA6F300EF5CCA /* AbstractSensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractSensors.h; sourceTree = "<group>"; };
+		DE9A5473167DA6F300EF5CCA /* AbstractSensors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractSensors.m; sourceTree = "<group>"; };
 		DEBEBF64167C8392009AF0DA /* SensorThreadManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorThreadManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBEBF68167C8392009AF0DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEBEBF6A167C8392009AF0DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				DEBEBF8F167C84A3009AF0DA /* Set_SensorPickersProtocol.h */,
+				DE9A5472167DA6F300EF5CCA /* AbstractSensors.h */,
+				DE9A5473167DA6F300EF5CCA /* AbstractSensors.m */,
 			);
 			name = PROTOCOLS;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				DEBEBF88167C8393009AF0DA /* Set_ViewController.m in Sources */,
 				DEBEBF92167C85A9009AF0DA /* AccelSensor.m in Sources */,
 				DEBEBF95167C86FB009AF0DA /* SoundPicker.m in Sources */,
+				DE9A5474167DA6F300EF5CCA /* AbstractSensors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +343,7 @@
 				DEBEBF8D167C8393009AF0DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

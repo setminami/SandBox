@@ -9,7 +9,7 @@
 #import "SoundPicker.h"
 
 @interface SoundPicker (){
-    NSOperationQueue *opQueue;
+
 }
 - (void)start;
 - (void)fire;
@@ -28,12 +28,11 @@
 }
 
 -(BOOL)canBeThread{
-    return YES;
+    return [super canBeThread];
 }
 
 -(void) main{
-    opQueue = [[NSOperationQueue alloc]init];
-    [opQueue addOperation:[[NSInvocationOperation alloc]initWithTarget:self selector:@selector(awake) object:nil]];
+    [super main];
     
 }
 

@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "Set_ViewController.h"
-#import "Set_SensorPickersProtocol.h"
+#import "AbstractSensors.h"
 
-@interface SoundPicker : NSObject<Set_SensorPickersProtocol> {
+@interface SoundPicker : AbstractSensors{
      AudioQueueRef queue;
 }
 

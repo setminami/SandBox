@@ -37,8 +37,7 @@
 }
 
 -(void) main{
-    opQueue = [[NSOperationQueue alloc]init];
-    [opQueue addOperation:[[NSInvocationOperation alloc]initWithTarget:self selector:@selector(awake) object:nil]];
+    [super main];
 }
 
 -(void) start{
