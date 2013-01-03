@@ -13,22 +13,29 @@
 #import "AbstractSensors.h"
 
 #define NUM_OF_BUFFERS 3
-#define SOUND_PACKS 20
+#define SOUND_PACKS 5
+#define REWIND_TIME_IN_MSECONDS 10000
+#define RAWAUDIO_PATH @"tmp"
+
 @interface SoundPicker : AbstractSensors{
     AudioFileID audioFile;
     AudioStreamBasicDescription dataFormat;
     AudioQueueRef queue;
     AudioQueueBufferRef buffers[NUM_OF_BUFFERS];
+    AudioTimeStamp back;
     CFURLRef fileURL;
     SInt64 currentPacket;
+    Float32 passedPeakPower;
+    
     BOOL isRecording;
     
 }
 
-@property float Volume;
+@property float Volume_delta;
 @property float Interval;
-@property float peakMeterBootupTime;
 
+@property AudioTimeStamp back;
+@property Float32 passedPeakPower;
 @property AudioQueueRef queue;
 @property AudioFileID audioFile;
 @property SInt64 currentPacket;
@@ -42,6 +49,7 @@
 -(void) startRecording;
 -(void) stopRecording;
 
+//-(void) _startTimeQueue:(UInt8)passedTime:(AudioQueueRef)audioQRef;
 
 void AudioInputCallback(    void* inUserData,
                                AudioQueueRef inAQ,

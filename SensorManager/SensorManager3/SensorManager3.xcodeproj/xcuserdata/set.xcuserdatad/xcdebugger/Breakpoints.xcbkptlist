@@ -8,37 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SensorManager3/SoundPicker.m"
-         timestampString = "378737422.858408"
+         timestampString = "378913056.857167"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "163"
-         endingLineNumber = "163"
-         landmarkName = "AudioInputCallback()"
-         landmarkType = "7">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "SensorManager3/SoundPicker.m"
-         timestampString = "378737796.134051"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
-         landmarkName = "-updateVolume:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "SensorManager3/SoundPicker.m"
-         timestampString = "378737809.831853"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "57"
-         endingLineNumber = "57"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
          landmarkName = "-start"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,12 +21,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SensorManager3/SoundPicker.m"
-         timestampString = "378737936.337298"
+         timestampString = "378913056.857167"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
          landmarkName = "-start"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SensorManager3/SoundPicker.m"
+         timestampString = "378913056.857167"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "141"
+         endingLineNumber = "141"
+         landmarkName = "-updateVolume"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
