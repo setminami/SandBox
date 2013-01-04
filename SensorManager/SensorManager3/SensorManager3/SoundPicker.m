@@ -8,7 +8,7 @@
 
 #import "SoundPicker.h"
 
-#include <mach/mach_time.h>
+#import <mach/mach_time.h>
 
 @implementation SoundPicker
 

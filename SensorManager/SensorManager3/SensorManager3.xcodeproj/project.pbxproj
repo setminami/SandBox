@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3334E81696C8CD00EB1525 /* HeAACConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3334E71696C8CD00EB1525 /* HeAACConverter.m */; };
 		DE3E75851682085C00C2BB33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3E75841682085C00C2BB33 /* UIKit.framework */; };
 		DE3E75871682085C00C2BB33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3E75861682085C00C2BB33 /* Foundation.framework */; };
 		DE3E75891682085C00C2BB33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3E75881682085C00C2BB33 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE3334E61696C8CD00EB1525 /* HeAACConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeAACConverter.h; sourceTree = "<group>"; };
+		DE3334E71696C8CD00EB1525 /* HeAACConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeAACConverter.m; sourceTree = "<group>"; };
 		DE3E75801682085C00C2BB33 /* SensorManager3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorManager3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3E75841682085C00C2BB33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE3E75861682085C00C2BB33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +113,8 @@
 				DE3E75A21682085C00C2BB33 /* Set_ViewController.h */,
 				DE3E75A31682085C00C2BB33 /* Set_ViewController.m */,
 				DE3E758B1682085C00C2BB33 /* Supporting Files */,
+				DE3334E61696C8CD00EB1525 /* HeAACConverter.h */,
+				DE3334E71696C8CD00EB1525 /* HeAACConverter.m */,
 			);
 			path = SensorManager3;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				DE3E75AC1682098300C2BB33 /* SoundPicker.m in Sources */,
 				DE3E75B116820A4400C2BB33 /* AbstractSensors.m in Sources */,
 				DE3E75B616820AB100C2BB33 /* AccelSensor.m in Sources */,
+				DE3334E81696C8CD00EB1525 /* HeAACConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +345,7 @@
 				DE3E75A91682085D00C2BB33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
