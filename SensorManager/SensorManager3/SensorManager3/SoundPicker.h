@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <AudioToolbox/AudioFile.h>
 #import "Set_ViewController.h"
+#import "HeAACConverter.h"
 #import "AbstractSensors.h"
 
 
@@ -17,6 +18,7 @@
 #define SOUND_PACKS 5
 #define REWIND_TIME_IN_MSECONDS 10000
 #define RAWAUDIO_PATH @"tmp"
+#define COOKEDAUDIO_PATH @"documents"
 
 @interface SoundPicker : AbstractSensors{
     AudioFileID audioFile;
@@ -28,20 +30,25 @@
     SInt64 currentPacket;
     Float32 passedPeakPower;
     
+    NSString* sourcePath;
+    NSString* destinationPath;
+    HeAACConverter* converter;
+    
+    
     BOOL isRecording;
     NSCondition* _recording;
     
 }
 
-@property float Volume_delta;
-@property float Interval;
+@property (nonatomic,readonly)float Volume_delta;
+@property (nonatomic,readwrite)float Interval;
 
-@property AudioTimeStamp back;
-@property Float32 passedPeakPower;
-@property AudioQueueRef queue;
-@property AudioFileID audioFile;
-@property SInt64 currentPacket;
-@property BOOL isRecording;
+@property (nonatomic,readwrite) AudioTimeStamp back;
+@property (nonatomic,readwrite)Float32 passedPeakPower;
+@property (nonatomic,readwrite)AudioQueueRef queue;
+@property (nonatomic,readwrite)AudioFileID audioFile;
+@property (nonatomic,readwrite)SInt64 currentPacket;
+@property (nonatomic,readwrite)BOOL isRecording;
 
 -(BOOL) canBeThread;
 -(void) start;

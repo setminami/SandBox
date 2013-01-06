@@ -96,7 +96,8 @@
     _cancelled = NO;
     _processing = YES;
 //    [self retain];
-    [self performSelectorInBackground:@selector(processingThread) withObject:nil];
+    //[self performSelectorInBackground:@selector(processingThread) withObject:nil];
+    [self performSelectorOnMainThread:@selector(processingThread) withObject:nil waitUntilDone:NO];
 }
 
 -(void)cancel{
@@ -135,6 +136,10 @@
         UInt32 allowMixing = _priorMixOverrideValue;
         checkResult(AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(allowMixing), &allowMixing), "AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryMixWithOthers");
     }
+    NSLog(@"Convert Complete :output -> %@",_destination);
+    NSURL* pathURL = [NSURL fileURLWithPath:_source];
+    NSLog(@"delete Original -> %@",_source);
+    [[NSFileManager defaultManager] removeItemAtURL:pathURL error:nil];
 }
 
 -(void)reportErrorAndCleanup:(NSError*)error{
@@ -168,9 +173,9 @@
     
     AudioStreamBasicDescription destinationFormat;
     memset(&destinationFormat,0,sizeof(destinationFormat));
-    destinationFormat.mChannelsPerFrame = sourceFormat.mChannelsPerFrame;
-    
-    destinationFormat.mFormatID = kAudioFormatMPEG4AAC_HE_V2;
+    //destinationFormat.mChannelsPerFrame = sourceFormat.mChannelsPerFrame;
+    //destinationFormat.mSampleRate = 44100.0;
+    destinationFormat.mFormatID = kAudioFormatMPEG4AAC;
     
     UInt32 size = sizeof(destinationFormat);
     if (!checkResult(AudioFormatGetProperty(kAudioFormatProperty_FormatInfo,0, NULL, &size, &destinationFormat), "AudioFormatGetProperty(kAudioFormatProperty_FormatInfo")) {
@@ -187,18 +192,22 @@
     }
     
     AudioStreamBasicDescription clientFormat;
+    NSLog(@"*****%d:%ld",kAudioFormatLinearPCM,sourceFormat.mFormatID);
     if (sourceFormat.mFormatID == kAudioFormatLinearPCM) {
         clientFormat = sourceFormat;
     }else{
         memset(&clientFormat, 0, sizeof(clientFormat));
-        int sampleSize = sizeof(AudioSampleType);
+        
+        clientFormat.mSampleRate = 44100.0f;
         clientFormat.mFormatID = kAudioFormatLinearPCM;
-        clientFormat.mFormatFlags = kAudioFormatFlagsCanonical;
-        clientFormat.mBitsPerChannel = 8 * sampleSize;
-        clientFormat.mChannelsPerFrame = sourceFormat.mChannelsPerFrame;
+        clientFormat.mFormatFlags = kLinearPCMFormatFlagIsBigEndian|kLinearPCMFormatFlagIsSignedInteger | kLinearPCMFormatFlagIsPacked;
+        clientFormat.mBytesPerPacket = 2;
         clientFormat.mFramesPerPacket = 1;
-        clientFormat.mBytesPerPacket = clientFormat.mBytesPerFrame = sourceFormat.mChannelsPerFrame * sampleSize;
-        clientFormat.mSampleRate = sourceFormat.mSampleRate;
+        clientFormat.mBytesPerFrame = 2 ;
+        clientFormat.mChannelsPerFrame = 1;
+        clientFormat.mBitsPerChannel = 16;
+        
+        clientFormat.mReserved = 0;
     }
     
     size = sizeof(clientFormat);
@@ -247,7 +256,7 @@
         fillBufList.mBuffers[0].mNumberChannels = clientFormat.mChannelsPerFrame;
         fillBufList.mBuffers[0].mDataByteSize = bufferByteSize;
         fillBufList.mBuffers[0].mData = srcBuffer;
-            
+        
         UInt32 numFrames = bufferByteSize / clientFormat.mBytesPerFrame;
         if(sourceFile){
             if(!checkResult(ExtAudioFileRead(sourceFile, &numFrames, &fillBufList),"ExtAudioFileRead")){

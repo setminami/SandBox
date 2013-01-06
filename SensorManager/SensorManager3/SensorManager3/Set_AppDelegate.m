@@ -23,6 +23,7 @@
     for(int i = 0 ; i < _SSPPArray.count ; i++){
         if([_SSPPArray[i] canBeThread]){[_SSPPArray[i] main];}
     }
+    
     return YES;
 }
 							

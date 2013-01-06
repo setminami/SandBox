@@ -7,7 +7,6 @@
 //
 
 #import "SoundPicker.h"
-
 #import <mach/mach_time.h>
 
 @implementation SoundPicker
@@ -165,6 +164,10 @@
     NSString *dateString = [dateForm stringFromDate:[NSDate date]];
     
     NSString* filePath = [NSString stringWithFormat:@"%@/%@.aiff",[NSHomeDirectory() stringByAppendingPathComponent:RAWAUDIO_PATH],dateString];
+    sourcePath = filePath;
+    NSString* outPath = [NSString stringWithFormat:@"%@/%@.m4a",[NSHomeDirectory() stringByAppendingPathComponent:COOKEDAUDIO_PATH],dateString];
+    destinationPath = outPath;
+    
     fileURL = CFURLCreateFromFileSystemRepresentation(NULL, (const UInt8*)[filePath UTF8String], [filePath length], NO);
     NSLog(@"%@%@",@"Start Recording! :",filePath);
     currentPacket = 0;
@@ -180,6 +183,7 @@
 
     AudioFileCreateWithURL(fileURL, kAudioFileAIFFType, &dataFormat,
                            kAudioFileFlags_EraseFile, &audioFile);
+    
     
    /* UInt32 cookieSize;
     
@@ -210,16 +214,23 @@
     [_recording unlock];
     
     AudioQueueFlush(queue);
-    AudioQueueStop(queue, NO);
+    AudioQueueStop(queue, YES);
     
     for(int i = 0;i < NUM_OF_BUFFERS; i++){
         AudioQueueFreeBuffer(queue, buffers[i]);
     }
     
-    AudioQueueDispose(queue,YES);
+    AudioQueueDispose(queue,NO);
     AudioFileClose(audioFile);
     [self initAudioQueue];
+    
+    
+    if([HeAACConverter AACConverterAvailable]){
+        converter = [[HeAACConverter alloc]initWithDelegate:NULL source:sourcePath destination:destinationPath];
+        [converter performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+    }
     [self start];
+    
     NSLog(@"Stop Recording!");
 }
 
