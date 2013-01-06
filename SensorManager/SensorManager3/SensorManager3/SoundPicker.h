@@ -29,6 +29,7 @@
     Float32 passedPeakPower;
     
     BOOL isRecording;
+    NSCondition* _recording;
     
 }
 

@@ -18,6 +18,8 @@
     NSLog(@"MIC awake!");
     _Volume_delta = 20.0f;
     _Interval = 0.5;
+    
+    _recording = [[NSCondition alloc]init];
     [self initAudioQueue];
     [self start];
 }
@@ -32,7 +34,10 @@
 }
 
 -(void) initAudioQueue{
+    [_recording lock];
     isRecording = NO;
+    [_recording unlock];
+    
     dataFormat.mSampleRate = 44100.0f;
     dataFormat.mFormatID = kAudioFormatLinearPCM;//kAudioFormatMPEG4AAC_HE
     dataFormat.mFormatFlags = kLinearPCMFormatFlagIsBigEndian|kLinearPCMFormatFlagIsSignedInteger | kLinearPCMFormatFlagIsPacked;
@@ -163,7 +168,11 @@
     fileURL = CFURLCreateFromFileSystemRepresentation(NULL, (const UInt8*)[filePath UTF8String], [filePath length], NO);
     NSLog(@"%@%@",@"Start Recording! :",filePath);
     currentPacket = 0;
+    
+    [_recording lock];
     isRecording = YES;
+    [_recording unlock];
+    
     /*
     AudioQueueNewInput(&dataFormat,AudioInputCallback, (__bridge void *)(self),
                        NULL,
@@ -196,7 +205,10 @@
 
 
 -(void) stopRecording{
+    [_recording lock];
     isRecording = NO;
+    [_recording unlock];
+    
     AudioQueueFlush(queue);
     AudioQueueStop(queue, NO);
     
