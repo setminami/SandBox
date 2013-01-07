@@ -24,6 +24,12 @@
 		DE3E75AE168209A600C2BB33 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3E75AD168209A600C2BB33 /* AudioToolbox.framework */; };
 		DE3E75B116820A4400C2BB33 /* AbstractSensors.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3E75B016820A4400C2BB33 /* AbstractSensors.m */; };
 		DE3E75B616820AB100C2BB33 /* AccelSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3E75B516820AB100C2BB33 /* AccelSensor.m */; };
+		DE6BFE3E169AF2A9005D9B25 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6BFE3D169AF2A9005D9B25 /* libsqlite3.0.dylib */; };
+		DE6BFE49169AF559005D9B25 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE42169AF559005D9B25 /* FMDatabase.m */; };
+		DE6BFE4A169AF559005D9B25 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE44169AF559005D9B25 /* FMDatabaseAdditions.m */; };
+		DE6BFE4B169AF559005D9B25 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE46169AF559005D9B25 /* FMDatabasePool.m */; };
+		DE6BFE4C169AF559005D9B25 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE48169AF559005D9B25 /* FMDatabaseQueue.m */; };
+		DE6BFE7C169AF580005D9B25 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE7B169AF580005D9B25 /* FMResultSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,17 @@
 		DE3E75B316820A7000C2BB33 /* Set_SensorPickersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set_SensorPickersProtocol.h; sourceTree = "<group>"; };
 		DE3E75B416820AB100C2BB33 /* AccelSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelSensor.h; sourceTree = "<group>"; };
 		DE3E75B516820AB100C2BB33 /* AccelSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelSensor.m; sourceTree = "<group>"; };
+		DE6BFE3D169AF2A9005D9B25 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		DE6BFE41169AF53F005D9B25 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = "fmdb-master/src/FMDatabase.h"; sourceTree = "<group>"; };
+		DE6BFE42169AF559005D9B25 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = "fmdb-master/src/FMDatabase.m"; sourceTree = "<group>"; };
+		DE6BFE43169AF559005D9B25 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = "fmdb-master/src/FMDatabaseAdditions.h"; sourceTree = "<group>"; };
+		DE6BFE44169AF559005D9B25 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = "fmdb-master/src/FMDatabaseAdditions.m"; sourceTree = "<group>"; };
+		DE6BFE45169AF559005D9B25 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = "fmdb-master/src/FMDatabasePool.h"; sourceTree = "<group>"; };
+		DE6BFE46169AF559005D9B25 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = "fmdb-master/src/FMDatabasePool.m"; sourceTree = "<group>"; };
+		DE6BFE47169AF559005D9B25 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = "fmdb-master/src/FMDatabaseQueue.h"; sourceTree = "<group>"; };
+		DE6BFE48169AF559005D9B25 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = "fmdb-master/src/FMDatabaseQueue.m"; sourceTree = "<group>"; };
+		DE6BFE7A169AF580005D9B25 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = "fmdb-master/src/FMResultSet.h"; sourceTree = "<group>"; };
+		DE6BFE7B169AF580005D9B25 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = "fmdb-master/src/FMResultSet.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6BFE3E169AF2A9005D9B25 /* libsqlite3.0.dylib in Frameworks */,
 				DE3E75AE168209A600C2BB33 /* AudioToolbox.framework in Frameworks */,
 				DE3E75851682085C00C2BB33 /* UIKit.framework in Frameworks */,
 				DE3E75871682085C00C2BB33 /* Foundation.framework in Frameworks */,
@@ -91,6 +109,7 @@
 		DE3E75831682085C00C2BB33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE6BFE3D169AF2A9005D9B25 /* libsqlite3.0.dylib */,
 				DE3E75AD168209A600C2BB33 /* AudioToolbox.framework */,
 				DE3E75841682085C00C2BB33 /* UIKit.framework */,
 				DE3E75861682085C00C2BB33 /* Foundation.framework */,
@@ -122,6 +141,7 @@
 		DE3E758B1682085C00C2BB33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE6BFE40169AF4D2005D9B25 /* fmdb */,
 				DE3E75AF168209BB00C2BB33 /* Protocols */,
 				DE3E758C1682085C00C2BB33 /* SensorManager3-Info.plist */,
 				DE3E758D1682085C00C2BB33 /* InfoPlist.strings */,
@@ -142,6 +162,23 @@
 				DE3E75B016820A4400C2BB33 /* AbstractSensors.m */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		DE6BFE40169AF4D2005D9B25 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				DE6BFE7A169AF580005D9B25 /* FMResultSet.h */,
+				DE6BFE7B169AF580005D9B25 /* FMResultSet.m */,
+				DE6BFE42169AF559005D9B25 /* FMDatabase.m */,
+				DE6BFE43169AF559005D9B25 /* FMDatabaseAdditions.h */,
+				DE6BFE44169AF559005D9B25 /* FMDatabaseAdditions.m */,
+				DE6BFE45169AF559005D9B25 /* FMDatabasePool.h */,
+				DE6BFE46169AF559005D9B25 /* FMDatabasePool.m */,
+				DE6BFE47169AF559005D9B25 /* FMDatabaseQueue.h */,
+				DE6BFE48169AF559005D9B25 /* FMDatabaseQueue.m */,
+				DE6BFE41169AF53F005D9B25 /* FMDatabase.h */,
+			);
+			name = fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +256,11 @@
 				DE3E75B116820A4400C2BB33 /* AbstractSensors.m in Sources */,
 				DE3E75B616820AB100C2BB33 /* AccelSensor.m in Sources */,
 				DE3334E81696C8CD00EB1525 /* HeAACConverter.m in Sources */,
+				DE6BFE49169AF559005D9B25 /* FMDatabase.m in Sources */,
+				DE6BFE4A169AF559005D9B25 /* FMDatabaseAdditions.m in Sources */,
+				DE6BFE4B169AF559005D9B25 /* FMDatabasePool.m in Sources */,
+				DE6BFE4C169AF559005D9B25 /* FMDatabaseQueue.m in Sources */,
+				DE6BFE7C169AF580005D9B25 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
