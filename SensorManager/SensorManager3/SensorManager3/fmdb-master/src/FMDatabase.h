@@ -3,6 +3,7 @@
 #import "FMResultSet.h"
 #import "FMDatabasePool.h"
 
+#import "LOGGER.h"
 
 #if ! __has_feature(objc_arc)
     #define FMDBAutorelease(__v) ([__v autorelease]);

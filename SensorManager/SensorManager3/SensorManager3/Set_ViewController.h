@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SensorManager.h"
 
 
 
-
-@interface Set_ViewController : UIViewController
+@interface Set_ViewController : UIViewController<UIWebViewDelegate>{
+    UIWebView* webView;
+    SensorManager* sManager;
+}
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) SensorManager* sManager;
 @end

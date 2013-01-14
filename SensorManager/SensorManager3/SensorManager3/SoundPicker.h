@@ -12,13 +12,16 @@
 #import "Set_ViewController.h"
 #import "HeAACConverter.h"
 #import "AbstractSensors.h"
+#import "SensorManager.h"
+#import "LOGGER.h"
 
+#define __DEBUG__
 
 #define NUM_OF_BUFFERS 3
 #define SOUND_PACKS 5
 #define REWIND_TIME_IN_MSECONDS 10000
 #define RAWAUDIO_PATH @"tmp"
-#define COOKEDAUDIO_PATH @"documents"
+#define COOKEDAUDIO_PATH @"PeekaBoo"
 
 @interface SoundPicker : AbstractSensors{
     AudioFileID audioFile;

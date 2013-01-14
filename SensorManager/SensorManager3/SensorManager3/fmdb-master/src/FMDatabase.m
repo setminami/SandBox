@@ -2,6 +2,7 @@
 #import "unistd.h"
 #import <objc/runtime.h>
 
+#undef NS_BLOCK_ASSERTIONS
 @interface FMDatabase ()
 
 - (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args;
@@ -901,7 +902,7 @@
 - (BOOL)executeUpdate:(NSString*)sql, ... {
     va_list args;
     va_start(args, sql);
-    
+
     BOOL result = [self executeUpdate:sql error:nil withArgumentsInArray:nil orDictionary:nil orVAList:args];
     
     va_end(args);

@@ -140,6 +140,9 @@
     NSURL* pathURL = [NSURL fileURLWithPath:_source];
     NSLog(@"delete Original -> %@",_source);
     [[NSFileManager defaultManager] removeItemAtURL:pathURL error:nil];
+    SensorManager* SM = [[SensorManager alloc]init];
+    [SM createChildTable];
+    [SM insertReactions:1:_destination];
 }
 
 -(void)reportErrorAndCleanup:(NSError*)error{

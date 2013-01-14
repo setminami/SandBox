@@ -24,17 +24,20 @@
 		DE3E75AE168209A600C2BB33 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3E75AD168209A600C2BB33 /* AudioToolbox.framework */; };
 		DE3E75B116820A4400C2BB33 /* AbstractSensors.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3E75B016820A4400C2BB33 /* AbstractSensors.m */; };
 		DE3E75B616820AB100C2BB33 /* AccelSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3E75B516820AB100C2BB33 /* AccelSensor.m */; };
+		DE69D834169C87D100B8B847 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE69D833169C87D100B8B847 /* libsqlite3.dylib */; };
 		DE6BFE3E169AF2A9005D9B25 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6BFE3D169AF2A9005D9B25 /* libsqlite3.0.dylib */; };
 		DE6BFE49169AF559005D9B25 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE42169AF559005D9B25 /* FMDatabase.m */; };
 		DE6BFE4A169AF559005D9B25 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE44169AF559005D9B25 /* FMDatabaseAdditions.m */; };
 		DE6BFE4B169AF559005D9B25 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE46169AF559005D9B25 /* FMDatabasePool.m */; };
 		DE6BFE4C169AF559005D9B25 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE48169AF559005D9B25 /* FMDatabaseQueue.m */; };
 		DE6BFE7C169AF580005D9B25 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE7B169AF580005D9B25 /* FMResultSet.m */; };
+		DE6BFE7F169AF82F005D9B25 /* SensorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6BFE7E169AF82F005D9B25 /* SensorManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DE3334E61696C8CD00EB1525 /* HeAACConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeAACConverter.h; sourceTree = "<group>"; };
 		DE3334E71696C8CD00EB1525 /* HeAACConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeAACConverter.m; sourceTree = "<group>"; };
+		DE35DB5A169D44AF00BAAEBE /* LOGGER.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOGGER.h; sourceTree = "<group>"; };
 		DE3E75801682085C00C2BB33 /* SensorManager3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorManager3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3E75841682085C00C2BB33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE3E75861682085C00C2BB33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +63,7 @@
 		DE3E75B316820A7000C2BB33 /* Set_SensorPickersProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set_SensorPickersProtocol.h; sourceTree = "<group>"; };
 		DE3E75B416820AB100C2BB33 /* AccelSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelSensor.h; sourceTree = "<group>"; };
 		DE3E75B516820AB100C2BB33 /* AccelSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelSensor.m; sourceTree = "<group>"; };
+		DE69D833169C87D100B8B847 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		DE6BFE3D169AF2A9005D9B25 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		DE6BFE41169AF53F005D9B25 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = "fmdb-master/src/FMDatabase.h"; sourceTree = "<group>"; };
 		DE6BFE42169AF559005D9B25 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = "fmdb-master/src/FMDatabase.m"; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		DE6BFE48169AF559005D9B25 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = "fmdb-master/src/FMDatabaseQueue.m"; sourceTree = "<group>"; };
 		DE6BFE7A169AF580005D9B25 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = "fmdb-master/src/FMResultSet.h"; sourceTree = "<group>"; };
 		DE6BFE7B169AF580005D9B25 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = "fmdb-master/src/FMResultSet.m"; sourceTree = "<group>"; };
+		DE6BFE7D169AF82F005D9B25 /* SensorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorManager.h; sourceTree = "<group>"; };
+		DE6BFE7E169AF82F005D9B25 /* SensorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE69D834169C87D100B8B847 /* libsqlite3.dylib in Frameworks */,
 				DE6BFE3E169AF2A9005D9B25 /* libsqlite3.0.dylib in Frameworks */,
 				DE3E75AE168209A600C2BB33 /* AudioToolbox.framework in Frameworks */,
 				DE3E75851682085C00C2BB33 /* UIKit.framework in Frameworks */,
@@ -89,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE35DB5E169D464900BAAEBE /* DEBUG */ = {
+			isa = PBXGroup;
+			children = (
+				DE35DB5A169D44AF00BAAEBE /* LOGGER.h */,
+			);
+			name = DEBUG;
+			sourceTree = "<group>";
+		};
 		DE3E75751682085C00C2BB33 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +124,7 @@
 		DE3E75831682085C00C2BB33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE69D833169C87D100B8B847 /* libsqlite3.dylib */,
 				DE6BFE3D169AF2A9005D9B25 /* libsqlite3.0.dylib */,
 				DE3E75AD168209A600C2BB33 /* AudioToolbox.framework */,
 				DE3E75841682085C00C2BB33 /* UIKit.framework */,
@@ -134,6 +150,8 @@
 				DE3E758B1682085C00C2BB33 /* Supporting Files */,
 				DE3334E61696C8CD00EB1525 /* HeAACConverter.h */,
 				DE3334E71696C8CD00EB1525 /* HeAACConverter.m */,
+				DE6BFE7D169AF82F005D9B25 /* SensorManager.h */,
+				DE6BFE7E169AF82F005D9B25 /* SensorManager.m */,
 			);
 			path = SensorManager3;
 			sourceTree = "<group>";
@@ -141,6 +159,7 @@
 		DE3E758B1682085C00C2BB33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE35DB5E169D464900BAAEBE /* DEBUG */,
 				DE6BFE40169AF4D2005D9B25 /* fmdb */,
 				DE3E75AF168209BB00C2BB33 /* Protocols */,
 				DE3E758C1682085C00C2BB33 /* SensorManager3-Info.plist */,
@@ -261,6 +280,7 @@
 				DE6BFE4B169AF559005D9B25 /* FMDatabasePool.m in Sources */,
 				DE6BFE4C169AF559005D9B25 /* FMDatabaseQueue.m in Sources */,
 				DE6BFE7C169AF580005D9B25 /* FMResultSet.m in Sources */,
+				DE6BFE7F169AF82F005D9B25 /* SensorManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -107,39 +107,14 @@
     
 }
 
-/*
--(void) _startTimeQueue:(UInt8)passedTime:(AudioQueueRef)audioQRef{
-    UInt64 theTime = mach_absolute_time();
-    Float64 sFreq = 0;
-    UInt32 sToNanosNumerator = 0;
-    UInt32 sToNanosDenominator = 0;
-    
-    struct mach_timebase_info theTimeBaseInfo;
-    mach_timebase_info(&theTimeBaseInfo);
-    
-    sToNanosNumerator = theTimeBaseInfo.numer;
-    sToNanosDenominator = theTimeBaseInfo.denom;
-    
-    sFreq = (Float64)(sToNanosDenominator)/(Float64)sToNanosNumerator;
-    sFreq *= 1000000000.0;
-    
-    AudioTimeStamp passedTimeStamp = {0};
-    UInt8 theSecondsInThePassed = passedTime;
-    
-    UInt64 startHostTime = theTime - (theSecondsInThePassed * sFreq);
-    passedTimeStamp.mFlags = kAudioTimeStampHostTimeValid;
-    passedTimeStamp.mHostTime = startHostTime;
-    AudioQueueStart(audioQRef, &passedTimeStamp);
-}
-*/
 
 - (void)updateVolume {
     AudioQueueLevelMeterState levelMeter;
     UInt32 levelMeterSize = sizeof(AudioQueueLevelMeterState);
     AudioQueueGetProperty(queue,kAudioQueueProperty_CurrentLevelMeterDB,&levelMeter,&levelMeterSize);
     
-    NSLog(@"mPeakPower=%0.3f", levelMeter.mPeakPower);
-    //NSLog(@"mAveragePower=%0.3f", levelMeter.mAveragePower);
+    LOG(@"mPeakPower=%0.3f", levelMeter.mPeakPower);
+    //LOG(@"mAveragePower=%0.3f", levelMeter.mAveragePower);
 
     if(((levelMeter.mPeakPower - passedPeakPower) > _Volume_delta)) {
         [self startRecording];
@@ -150,23 +125,27 @@
 }
 
 - (void)startRecording {
-/*    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"I can hear you..."
-                                                    message:@"Recording!!"
-                                                    delegate:nil
-                                                    cancelButtonTitle:nil
-                                                    otherButtonTitles:nil];
-    
-    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
-    [alert dismissWithClickedButtonIndex:0 animated:YES];
-  */
+
     NSDateFormatter *dateForm = [[NSDateFormatter alloc]init];
-    [dateForm setDateFormat:@"Y-M-d_H-m-s"];
+    [dateForm setDateFormat:@"YYYYMMddHHmmss"];
     NSString *dateString = [dateForm stringFromDate:[NSDate date]];
     
+    NSFileManager* fileManager = [NSFileManager defaultManager];
     NSString* filePath = [NSString stringWithFormat:@"%@/%@.aiff",[NSHomeDirectory() stringByAppendingPathComponent:RAWAUDIO_PATH],dateString];
     sourcePath = filePath;
-    NSString* outPath = [NSString stringWithFormat:@"%@/%@.m4a",[NSHomeDirectory() stringByAppendingPathComponent:COOKEDAUDIO_PATH],dateString];
-    destinationPath = outPath;
+    NSString* paths = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];//NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* local = [paths stringByAppendingPathComponent:COOKEDAUDIO_PATH];
+    NSString* outPath = [NSString stringWithFormat:@"%@/%@.m4a",local,dateString];
+    BOOL isDir;
+    BOOL isExist = [fileManager fileExistsAtPath:local isDirectory:&isDir];
+    if(isExist){
+        destinationPath = outPath;
+    }else{
+        NSLog(@"WARNING: filePath not found %@",local);
+        [fileManager changeCurrentDirectoryPath:paths];
+        [fileManager createDirectoryAtPath:local withIntermediateDirectories:YES attributes:nil error:nil];
+        
+    }
     
     fileURL = CFURLCreateFromFileSystemRepresentation(NULL, (const UInt8*)[filePath UTF8String], [filePath length], NO);
     NSLog(@"%@%@",@"Start Recording! :",filePath);
@@ -176,34 +155,17 @@
     isRecording = YES;
     [_recording unlock];
     
-    /*
-    AudioQueueNewInput(&dataFormat,AudioInputCallback, (__bridge void *)(self),
-                       NULL,
-                       kCFRunLoopCommonModes, 0, &queue);*/
-
     AudioFileCreateWithURL(fileURL, kAudioFileAIFFType, &dataFormat,
                            kAudioFileFlags_EraseFile, &audioFile);
     
     
-   /* UInt32 cookieSize;
-    
-   OSStatus o = AudioQueueGetPropertySize(queue,
-                            kAudioQueueProperty_MagicCookie,
-                             &cookieSize);
-        char* magicCookie = (char*) malloc(cookieSize);
-        o = AudioQueueGetProperty(queue, kAudioQueueProperty_MagicCookie
-                              , magicCookie, &cookieSize) ;
-           o = AudioFileSetProperty(audioFile,kAudioFilePropertyMagicCookieData,cookieSize,magicCookie);
-        free(magicCookie);
-    //}
-    */
     for(int i = 0; i< NUM_OF_BUFFERS; i++){
         AudioQueueAllocateBuffer(queue,
                                  (dataFormat.mSampleRate/10.0f)*dataFormat.mBytesPerFrame,
                                  &buffers[i]);
         AudioQueueEnqueueBuffer(queue,buffers[i],0,nil);
     }
-    //AudioQueueStart(queue,NULL);
+    
 }
 
 
@@ -256,7 +218,7 @@ void AudioInputCallback(       void* inUserData,
                                const AudioTimeStamp *inStartTime,
                                UInt32 inNumberPacketDescriptions,
                                const AudioStreamPacketDescription *inPacketDescs) {
-    NSLog(@"AudioInputCallback is called!");
+    LOG(@"AudioInputCallback is called!");
     SoundPicker* recorder = (__bridge SoundPicker*) inUserData;
 
     OSStatus status = AudioFileWritePackets(recorder.audioFile, YES, inBuffer->mAudioDataByteSize,
