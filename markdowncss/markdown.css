@@ -6,6 +6,25 @@ body{
     max-width: 960px;
     padding: 30px;
 }
+
+fr, fb, fg {
+    color: #111111;
+    font-size: medium;
+    font-family: cursive;
+    font-weight: italic;
+}
+
+fr {
+  color: #ff0000;
+}
+
+fb {
+  color: #00ff00;
+}
+
+fg {
+  color: #0000ff;
+}
 h1, h2, h3, h4 {
     color: #111111;
     font-weight: 400;
@@ -257,23 +276,4 @@ button:active {
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
-}
-
-fr, fb, fg {
-    color: #111111;
-    font-size: medium;
-    font-family: cursive;
-    font-weight: italic;
-}
-
-fr {
-  color: #ff0000;
-}
-
-fb {
-  color: #00ff00;
-}
-
-fg {
-  color: #0000ff;
 }
