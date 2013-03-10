@@ -9,7 +9,7 @@ body{
 fr, fb, fg {
     color: #111111;
     font-size: medium;
-    font-family: cursive;
+    font-family: cursive,times;
     font-weight: italic;
 }
 fr {
