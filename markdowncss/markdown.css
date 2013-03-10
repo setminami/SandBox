@@ -13,15 +13,12 @@ fr, fb, fg {
     font-family: cursive;
     font-weight: italic;
 }
-
 fr {
   color: #ff0000;
 }
-
 fb {
   color: #00ff00;
 }
-
 fg {
   color: #0000ff;
 }
