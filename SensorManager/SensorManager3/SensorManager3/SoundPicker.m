@@ -9,6 +9,7 @@
 #import "SoundPicker.h"
 #import <mach/mach_time.h>
 
+#define __DEBUG__
 @implementation SoundPicker
 
 @synthesize queue,currentPacket,audioFile,isRecording,back,passedPeakPower;
@@ -19,6 +20,8 @@
     _Interval = 0.5;
     
     _recording = [[NSCondition alloc]init];
+   // SVC = [[Set_ViewController alloc]initWithNibName:@"ChildWebView" bundle:[NSBundle mainBundle]];
+    //SVC = [[[Set_AppDelegate alloc]init] getChildWebView];
     [self initAudioQueue];
     [self start];
 }
@@ -117,6 +120,11 @@
     //LOG(@"mAveragePower=%0.3f", levelMeter.mAveragePower);
 
     if(((levelMeter.mPeakPower - passedPeakPower) > _Volume_delta)) {
+        if (![NSThread isMainThread]) {
+            UIWindow* window = [UIApplication sharedApplication].keyWindow;
+            UIViewController* rootController = window.rootViewController;
+            [rootController performSelectorOnMainThread:@selector(getWebView) withObject:nil waitUntilDone:YES];
+        }
         [self startRecording];
         [NSThread sleepForTimeInterval:SOUND_PACKS];
         [self stopRecording];
@@ -189,7 +197,8 @@
     
     if([HeAACConverter AACConverterAvailable]){
         converter = [[HeAACConverter alloc]initWithDelegate:NULL source:sourcePath destination:destinationPath];
-        [converter performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+        //[converter performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+        [converter start];
     }
     [self start];
     

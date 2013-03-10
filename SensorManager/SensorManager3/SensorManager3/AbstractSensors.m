@@ -10,7 +10,7 @@
 
 
 @implementation AbstractSensors
-
+@synthesize opQueue = _opQueue;
 
 -(void)start{
     

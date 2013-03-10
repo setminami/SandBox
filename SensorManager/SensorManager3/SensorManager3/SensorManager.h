@@ -31,6 +31,9 @@ typedef enum dbSearch{
     FMDatabase* db;
         
     BOOL wasInitiate;
+        
+    BOOL isDbReady;
+    NSCondition* _dbReady;
 }
 
 @property (nonatomic,readwrite) NSArray* paths;
@@ -42,8 +45,12 @@ typedef enum dbSearch{
 -(NSArray*)checkObjects;
 -(void)insertObjects:(NSArray*)objs;
 -(void)createChildTable;
--(void)insertReactions:(UInt8)userid:(NSString*)fileName;
+-(void)insertReactions:(UInt8) userId :(NSString*) fileName;
 -(Search)searchObject:(NSURL*)url;
+-(NSURL*) changeObj:(NSInteger) userId ;
+-(void) lock;
+-(void) unlock;
+-(void) setIsdbReady:(BOOL) YorN;
 @end
 
 @interface ObjectsData:NSObject{

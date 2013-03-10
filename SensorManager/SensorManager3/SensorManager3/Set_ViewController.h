@@ -12,9 +12,23 @@
 
 
 @interface Set_ViewController : UIViewController<UIWebViewDelegate>{
-    UIWebView* webView;
+    BOOL isSetWebView;
+    dispatch_queue_t main_queue;
+    UINavigationBar* addressBar;
     SensorManager* sManager;
+    IBOutlet UIWebView *webView;
+    UINavigationBar* nav;
 }
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (assign,nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) SensorManager* sManager;
+@property (nonatomic,readwrite) BOOL isSetWebview;
+@property (nonatomic,readonly) UINavigationBar* addressBar;
+@property (nonatomic,retain) UIWindow* window;
+
+-(void) getWebView;
+-(void)webViewDidStartLoad:(UIWebView *)webView;
+-(void)webViewDidFinishLoad:(UIWebView *)webView;
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+
 @end

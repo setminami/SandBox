@@ -31,7 +31,7 @@ static inline BOOL _checkResultLite(OSStatus result,const char* operation,const 
 }
 
 
-@interface HeAACConverter: AbstractSensors {
+@interface HeAACConverter: AbstractSensors{
     BOOL    _processing;
     BOOL    _cancelled;
     BOOL    _interrupted;
@@ -70,3 +70,4 @@ static inline BOOL _checkResultLite(OSStatus result,const char* operation,const 
 @optional
 -(void)HeAACConverter:(HeAACConverter *)converter seekToPosition:(NSUInteger)position;
 @end
+

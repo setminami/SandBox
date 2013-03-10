@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Set_ViewController.h"
 #import "Set_SensorPickersProtocol.h"
+//#import "Set_AppDelegate.h"
 
-@interface AbstractSensors : NSObject<Set_SensorPickersProtocol>{
-    
-}
+@interface AbstractSensors : NSObject<Set_SensorPickersProtocol>
+
 @property NSOperationQueue *opQueue;
 
 -(void)start:(id)withInitOptions;

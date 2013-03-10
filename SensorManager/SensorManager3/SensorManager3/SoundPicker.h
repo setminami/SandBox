@@ -15,6 +15,8 @@
 #import "SensorManager.h"
 #import "LOGGER.h"
 
+#import "Set_AppDelegate.h"
+
 #define __DEBUG__
 
 #define NUM_OF_BUFFERS 3

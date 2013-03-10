@@ -8,7 +8,8 @@
 
 #import "Set_AppDelegate.h"
 
-@implementation Set_AppDelegate
+@implementation Set_AppDelegate;
+@synthesize SSPPArray = _SSPPArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -17,9 +18,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     _SSPPArray[0] = [[SoundPicker alloc]init];
-    //_SSPPArray[1] = [[AccelSensor alloc]init];
-    
-    //[_SSPPArray[0] getThread]= [[NSThread alloc] initWithTarget:self selector:@selector(_SSPPArray[0].awake) object:nil];
+
     for(int i = 0 ; i < _SSPPArray.count ; i++){
         if([_SSPPArray[i] canBeThread]){[_SSPPArray[i] main];}
     }
@@ -53,5 +52,7 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 
 @end

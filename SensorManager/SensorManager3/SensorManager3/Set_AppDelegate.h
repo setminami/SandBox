@@ -10,10 +10,12 @@
 #import "SoundPicker.h"
 #import "AccelSensor.h"
 
+@class Set_ViewController;
 
 #define NUMOFSENSORS 10
 @interface Set_AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableArray* SSPPArray;
+
 @end

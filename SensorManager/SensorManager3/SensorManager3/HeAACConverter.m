@@ -97,7 +97,7 @@
     _processing = YES;
 //    [self retain];
     //[self performSelectorInBackground:@selector(processingThread) withObject:nil];
-    [self performSelectorOnMainThread:@selector(processingThread) withObject:nil waitUntilDone:NO];
+    [self processingThread];
 }
 
 -(void)cancel{
@@ -338,7 +338,7 @@
     if (_cancelled){
         [[NSFileManager defaultManager]removeItemAtPath:_destination error:NULL];
     }else{
-        [self performSelectorOnMainThread:@selector(reportCompletion) withObject:nil waitUntilDone:NO];
+        [self reportCompletion];
     }
 
     _processing = NO;

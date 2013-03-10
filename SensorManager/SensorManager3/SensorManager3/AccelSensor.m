@@ -48,7 +48,7 @@
  
 }
 
--(void) motionSensorCallback:accelerometerData:error {
+-(void) motionSensorCallback: accelerometerData :error {
     NSLog(@"Moving!");
 }
 

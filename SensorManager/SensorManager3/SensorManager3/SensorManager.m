@@ -23,11 +23,17 @@
 @implementation SensorManager
 @synthesize paths = _paths,dir = _dir,db = _db,wasInitiate = _wasInitiate;
 
+
 -(SensorManager*)init{
     paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     dir = [paths objectAtIndex:0];
     db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:DB_NAME]];
     wasInitiate = YES;
+    [_dbReady lock];
+    isDbReady = NO;
+    [_dbReady unlock];
+    
+    [self checkObjects];
     return self;
 }
 
@@ -56,6 +62,8 @@
     }
     
     [db close];
+    
+    
     return [NSMutableArray arrayWithArray:array];
 }
 
@@ -104,6 +112,7 @@
         [db commit];
         [db close];
     }
+    
 }
 
 -(void)createChildTable{
@@ -115,7 +124,7 @@
     [db close];
 }
 
--(void)insertReactions:(UInt8)userId:(NSString*)fileName_abs{
+-(void)insertReactions:(UInt8) userId :(NSString*)fileName_abs{
 
     NSArray* fileName = [fileName_abs componentsSeparatedByString:FILE_SPLITTER];
     NSArray* fileType = [fileName.lastObject componentsSeparatedByString:SUFF];
@@ -135,5 +144,51 @@
     [db commit];
     [db close];
 }
+
+-(NSURL*)changeObj:(NSInteger) userId{
+    while (isDbReady) {
+        [NSThread sleepForTimeInterval:0.1f];
+    }
+    NSString* searchObjData = @"select objectpath from Objects where userid=?";
+    NSMutableArray* array = [[NSMutableArray alloc]init];
+    if ([db open]) {
+        db.traceExecution = YES;
+        FMResultSet* result = [db executeQuery:searchObjData,[NSNumber numberWithInt:userId]];
+        
+        while ([result next]) {
+            NSMutableDictionary* dic = [[NSMutableDictionary alloc]init];
+            [dic setValue:[NSString stringWithString:[result stringForColumn:@"objectpath"]] forKey:@"objectpath"];
+            [array addObject:dic];
+        }
+        [result close];
+        [db close];
+    }
+        if ([array count] > 1) {
+            srand(time(NULL));
+            int r = rand()%[array count];
+            
+            NSURL* objData = [[NSURL alloc]initWithString:
+                              [[array objectAtIndex:r] objectForKey:@"objectpath"]];
+            return objData;
+        }else if([array count] == 0){
+            NSLog(@"Object DB incorrect!: Object not found in userId = %d",userId);
+            NSException* ex = [[NSException alloc]initWithName:@"Object DB incorrect!" reason:@"Object not found in userId" userInfo:nil];
+            @throw ex;
+        }
+    return nil;
+}
+
+-(void) lock{
+    [_dbReady lock];
+}
+
+-(void) unlock{
+    [_dbReady unlock];
+}
+
+-(void) setIsdbReady:(BOOL) YorN{
+    isDbReady = YorN;
+}
+
 @end
 
