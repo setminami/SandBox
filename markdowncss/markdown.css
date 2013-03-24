@@ -48,7 +48,7 @@ a:visited {
     color: purple;
 }
 ul, ol {
-    padding: 0;
+    padding: 10;
     margin: 0;
 }
 li {
@@ -278,9 +278,11 @@ fg {
 fb {
   color: #0000ff;
 }
-
 du {
   font-weight: italic ;
   font-size: 15px ;
   border-bottom:1px dotted;
+}
+table, td, th {
+    border: 1px solid;
 }
