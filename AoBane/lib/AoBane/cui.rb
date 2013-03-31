@@ -1,4 +1,4 @@
-#! ruby
+#
 # AoBane Command-line Interface
 #
 require 'optparse'
