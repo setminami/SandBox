@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-require 'cui.rb'
-
-require 'bluefeather/cui'
-AoBane::CUI.run(ARGV) or exit(1)
